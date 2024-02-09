@@ -28,7 +28,15 @@ img{
     padding: 0 1.2rem;
     align-items: center;
 }
+
+.h3{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+
 /* header */
+
 /* header{
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://github.com/realFrankieWilson/portfolio/blob/main/assets/images/color.jpeg?raw=true) center/cover no-repeat fixed;
@@ -59,6 +67,9 @@ img{
 #form{
     /* color: white; */
     margin-bottom: 2.5rem;
+}
+#card{
+    margin-bottom: 2rem;
 }
 .navbar-nav{
     padding: 0.8rem 0 0.2rem 0;
@@ -155,10 +166,7 @@ img{
     cursor: pointer;
     margin: 1.5rem 0;
 }
-/* .card img{
-    position: relative;
-    overflow: hidden;
-}
+/*
 .card img::after{
     position: absolute;
     content: "";

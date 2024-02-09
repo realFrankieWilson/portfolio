@@ -10,72 +10,26 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="card shadow">
+            {% for post in posts %}
+            <div class="card shadow-lg" id="card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md">
                             <img src="/static/images/Man selling1.webp" alt="img">
                         </div>
                         <div class="col-md-8">
-                            <small>20th Feb, 2024</small>
+                            <small>{{ post.created_at }}</small>
                             <hr>
-                            <a class="h3" href="#">Welcome to India</a>
-                            <p class="text-justify my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, voluptatem.
-                                Nesciunt repellat harum dignissimos eum?
-                            </p>
+                            <a class="h3" href="#">{{ post.title }}</a>
+                            <p class="text-justify my-3">{{ post.content }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    <div class="row mt-5 pt-5">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md">
-                            <img src="/static/images/man-blowing -trumpet .webp" alt="img">
-                        </div>
-                        <div class="col-md-8">
-                            <small>20th Feb, 2024</small>
-                            <hr>
-                            <a class="h3" href="#">Welcome to India</a>
-                            <p class="text-justify my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, voluptatem.
-                                Nesciunt repellat harum dignissimos eum?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-5 pt-5">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md">
-                            <img src="/static/images/Morocco.webp" alt="img">
-                        </div>
-                        <div class="col-md-8">
-                            <small>20th Feb, 2024</small>
-                            <hr>
-                            <a class="h3" href="#">Welcome to India</a>
-                            <p class="text-justify my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, voluptatem.
-                                Nesciunt repellat harum dignissimos eum?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div
 {% endblock %}
 
 
