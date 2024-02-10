@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -111,6 +112,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Crispy form 
+CRISPY_TEMPLATE_PACK = 'boostrap5'
 
 
 # Static files (CSS, JavaScript, Images)
