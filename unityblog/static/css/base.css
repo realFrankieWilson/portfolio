@@ -13,9 +13,7 @@
     font-family: var(--Quicksand);
 }
 body{
-    line-height: 1.4;
     color: var(--dark);
-    background-color: bisque;
 }
 
 .navbar{
@@ -31,12 +29,12 @@ body{
     letter-spacing: 1px;
 }
 
-.card-container{
-    padding-top: 2rem;
+.card-container {
+    padding-top: 3.5rem;
 }
 
-.card{
-    border-radius: 1rem;
+.card {
+    border-radius: 0.5rem;
 }
 
 .navbar-nav a{
@@ -56,13 +54,4 @@ body{
     display: flex;
     width: 100%;
 
-}
-
-#h4{
-    /* margin-left: 24%; */
-    margin-left: 8.5rem;
-}
-
-#form{
-    justify-items: auto;
 }

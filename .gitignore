@@ -11,3 +11,7 @@ g@lden1one
 unityblog/users/__pycache__/
 unityblog/.vscode/
 unityblog/users/migrations/__pycache__/
+unityblog/db.sqlite3
+unityblog/unityblog/settings.py
+unityblog/templates/partials/cards.html
+unityblog/templates/partials/local.html

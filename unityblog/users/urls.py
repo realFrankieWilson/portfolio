@@ -1,8 +1,13 @@
 """Urls for user loging"""
 from django.urls import path
 from .import views
+from django.contrib.auth import views as auth_view
+# from django.contrib.auth.views import LogoutView
+
 
 
 urlpatterns = [
-    path('signup/', views.signup, name='users-sign-up')
+    path('signup/', views.signup, name='users-sign-up'),
+    path('login/', auth_view.LoginView.as_view(template_name='users/login.html'), name='users-login'),
+    path('logout/', views.logout_view, name='users-logout'),
 ]
