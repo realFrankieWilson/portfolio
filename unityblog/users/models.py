@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(
         default='def-profile-img.jpg',upload_to='profile',
-        validators=[FileExtensionValidator(['png', 'jpg'])]
+        validators=[FileExtensionValidator(['png', 'jpg', 'jpeg'])]
         )
 
 
