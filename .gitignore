@@ -15,3 +15,8 @@ unityblog/db.sqlite3
 unityblog/unityblog/settings.py
 unityblog/templates/partials/cards.html
 unityblog/templates/partials/local.html
+unityblog/asset/admin/
+unityblog/db.sqlite3
+
+unityblog/asset/images/
+unityblog/db.sqlite3
