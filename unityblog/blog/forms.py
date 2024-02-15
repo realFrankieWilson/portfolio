@@ -13,3 +13,12 @@ class PostForm(forms.ModelForm):
         """
         model = Post
         fields = ('title', 'content')
+
+
+class PostUpdateForm(forms.ModelForm):
+    """ Inherits from forms.ModelsForm"""
+    class Meta:
+        model = Post
+        fields = ('title', 'content')
+
+
