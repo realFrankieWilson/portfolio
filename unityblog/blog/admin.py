@@ -1,6 +1,6 @@
 """Amin registers models of of our applications."""
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 class PostAdmin(admin.ModelAdmin):
     """Displays the post's title, and the date on the admin page"""
@@ -9,3 +9,4 @@ class PostAdmin(admin.ModelAdmin):
 
 # Register Your models here.
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)

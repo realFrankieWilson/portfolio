@@ -25,3 +25,12 @@ class Post(models.Model):
     def __str__(self):
         """returns the post's title in a formarted string"""
         return self.title
+
+class Comment(models.Model):
+    """Comment class"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.content

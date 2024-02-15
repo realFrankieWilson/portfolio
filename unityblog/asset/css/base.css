@@ -50,3 +50,17 @@ body{
     width: 100%;
 
 }
+
+/** Cover **/
+.cover {
+    background: url('/static/images/img1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#comment-body {
+    background-color: red;
+    height: 250px;
+    overflow-y: scroll;
+}
