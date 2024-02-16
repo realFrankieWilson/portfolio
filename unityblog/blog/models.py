@@ -21,6 +21,14 @@ class Post(models.Model):
     class Meta:
         """Orders contents by date"""
         ordering = ('-created_at',)
+    
+    def comment_count(self):
+        """Counts the comment of a particular post"""
+        return self.comment_set.all().count()
+    
+    def comments(self):
+        """Gets the actual comments"""
+        return self.comment_set.all()
 
     def __str__(self):
         """returns the post's title in a formarted string"""
@@ -33,4 +41,5 @@ class Comment(models.Model):
     content = models.CharField(max_length=200)
 
     def __str__(self):
+        """Return string representation of comment"""
         return self.content

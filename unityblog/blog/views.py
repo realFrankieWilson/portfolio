@@ -9,7 +9,7 @@
 """
 from django.shortcuts import render, redirect
 from .models import Post
-from .forms import PostForm, PostUpdateForm
+from .forms import PostForm, PostUpdateForm, CommentForm
 
 def index(request):
     """
@@ -40,8 +40,19 @@ def index(request):
 def post_detail(request, pk):
     """Returns A post's detail"""
     post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        com_form = CommentForm(request.POST)
+        if com_form.is_valid():
+            instance = com_form.save(commit=False)
+            instance.user = request.user
+            instance.post = post
+            instance.save()
+            return redirect('blog-post-detail', pk=post.id)
+    else:
+        com_form = CommentForm()
     context = {
         'post': post,
+        'com_form': com_form,
     }
     return render(request, 'blog/post_detail.html', context)
 
