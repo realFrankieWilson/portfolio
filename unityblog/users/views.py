@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from .forms import signUp, UserUpdateForm, ProfileUpdateForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def signup(request):
@@ -21,11 +22,13 @@ def signup(request):
     }
     return render(request, 'users/signup.html', context)
 
+@login_required
 def logout_view(request):
     """A customised logout page"""
     logout(request)
     return render(request, 'users/logout.html')
 
+@login_required
 def profile(request):
     """
         Returns a profile page

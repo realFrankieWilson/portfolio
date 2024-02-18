@@ -10,7 +10,12 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm, PostUpdateForm, CommentForm
+from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
 
+
+@login_required
 def index(request):
     """
         Shows contents to the webpage,
@@ -37,6 +42,7 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 
+@login_required
 def post_detail(request, pk):
     """Returns A post's detail"""
     post = Post.objects.get(id=pk)
@@ -56,6 +62,7 @@ def post_detail(request, pk):
     }
     return render(request, 'blog/post_detail.html', context)
 
+@login_required
 def post_edit(request, pk):
     """Returns Edit page template."""
     post = Post.objects.get(id=pk)
@@ -74,6 +81,7 @@ def post_edit(request, pk):
 
     return render(request, 'blog/post_edit.html', context)
 
+login_required
 def post_delete(request, pk):
     """Deletes a post """
     post = Post.objects.get(id=pk)
@@ -84,3 +92,16 @@ def post_delete(request, pk):
         'post': post,
     }
     return render(request, 'blog/post_delete.html', context)
+
+# def send_mail(request):
+#     if request.method == 'POST':
+#         message = request.POST['message']
+#         email = request.POST['email']
+#         name = request.POST['name']
+#         send_mail(
+#             'Contact form',
+#             message,
+#             'settings.EMAIL_HOST_USER',
+#             ['frankuwill101@gmail.com'],
+#             fail_silently=False
+#         )
